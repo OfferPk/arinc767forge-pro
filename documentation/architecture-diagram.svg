@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="480" y="45" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="bold" fill="#ffffff">
+    ARINC767Forge Pro (v1.0.0) Architecture &amp; Black Box Telemetry
+  </text>
+  <text x="480" y="70" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#94a3b8">
+    Enhanced Airborne Flight Recorder (EAFR) | ARINC 767-1, EUROCAE ED-112A &amp; 25-Hour CVR/FDR
+  </text>
+
+  <!-- Block 1: Forward EAFR Unit -->
+  <g transform="translate(40, 110)" filter="url(#shadow)">
+    <rect width="250" height="370" rx="8" fill="#111827" stroke="#ea580c" stroke-width="1.5"/>
+    <rect width="250" height="40" rx="8" fill="url(#orangeGrad)"/>
+    <text x="125" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff">FORWARD EAFR (COCKPIT)</text>
+    <text x="20" y="75" font-family="monospace" font-size="12" fill="#cbd5e1">• Cockpit Area Microphone (CAM)</text>
+    <text x="20" y="105" font-family="monospace" font-size="12" fill="#cbd5e1">• Capt / F/O / Obs Audio</text>
+    <text x="20" y="135" font-family="monospace" font-size="12" fill="#cbd5e1">• Cockpit Optical Image (AIR)</text>
+    <text x="20" y="165" font-family="monospace" font-size="12" fill="#cbd5e1">• FANS 1/A DLR Messages</text>
+    <text x="20" y="195" font-family="monospace" font-size="12" fill="#cbd5e1">• 25-Hour CSMU Memory</text>
+    <text x="20" y="225" font-family="monospace" font-size="12" fill="#cbd5e1">• RIPS Power Holdover (10m)</text>
+    <text x="35" y="245" font-family="monospace" font-size="11" fill="#94a3b8">- FAA TSO-C155a Battery</text>
+    <text x="20" y="275" font-family="monospace" font-size="12" fill="#cbd5e1">• ARINC 664 (AFDX) Port A/B</text>
+    <text x="20" y="305" font-family="monospace" font-size="12" fill="#cbd5e1">• ARINC 429 Status Word</text>
+    <rect x="20" y="325" width="210" height="30" rx="4" fill="#431407" stroke="#ea580c"/>
+    <text x="125" y="345" text-anchor="middle" font-family="monospace" font-size="11" fill="#fdba74">PRIMARY CVR / FDR LINK</text>
+  </g>
+
+  <!-- Block 2: 4-Channel CSMU Multiplexer -->
+  <g transform="translate(350, 110)" filter="url(#shadow)">
+    <rect width="260" height="370" rx="8" fill="#111827" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect width="260" height="40" rx="8" fill="#0f766e"/>
+    <text x="130" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff">4-CHANNEL CSMU CORE</text>
+    <text x="20" y="75" font-family="monospace" font-size="12" fill="#e2e8f0">• Channel 1: Flight Data (FDR)</text>
+    <text x="35" y="95" font-family="monospace" font-size="11" fill="#94a3b8">- 1024 Words/Sec, 25 Hours</text>
+    <text x="20" y="125" font-family="monospace" font-size="12" fill="#e2e8f0">• Channel 2: Cockpit Voice (CVR)</text>
+    <text x="35" y="145" font-family="monospace" font-size="11" fill="#94a3b8">- 4 Channels Lossless 25 Hrs</text>
+    <text x="20" y="175" font-family="monospace" font-size="12" fill="#e2e8f0">• Channel 3: Data Link (DLR)</text>
+    <text x="35" y="195" font-family="monospace" font-size="11" fill="#94a3b8">- CPDLC Clearances &amp; ADS-C</text>
+    <text x="20" y="225" font-family="monospace" font-size="12" fill="#e2e8f0">• Channel 4: Image Rec (AIR)</text>
+    <text x="35" y="245" font-family="monospace" font-size="11" fill="#94a3b8">- 1080p Cockpit Displays</text>
+    <text x="20" y="275" font-family="monospace" font-size="12" fill="#e2e8f0">• G-Switch Impact Latch (>=6g)</text>
+    <text x="20" y="305" font-family="monospace" font-size="12" fill="#e2e8f0">• Thermal/Impact Hardening</text>
+    <rect x="20" y="325" width="220" height="30" rx="4" fill="#134e4a" stroke="#14b8a6"/>
+    <text x="130" y="345" text-anchor="middle" font-family="monospace" font-size="11" fill="#5eead4">EUROCAE ED-112A CERTIFIED</text>
+  </g>
+
+  <!-- Block 3: Aft EAFR Unit & ULB Beacon -->
+  <g transform="translate(670, 110)" filter="url(#shadow)">
+    <rect width="250" height="370" rx="8" fill="#111827" stroke="#ea580c" stroke-width="1.5"/>
+    <rect width="250" height="40" rx="8" fill="url(#orangeGrad)"/>
+    <text x="125" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff">AFT EAFR &amp; ULB (EMPENNAGE)</text>
+    <text x="20" y="75" font-family="monospace" font-size="12" fill="#cbd5e1">• High-Survivability Tail Cone</text>
+    <text x="20" y="105" font-family="monospace" font-size="12" fill="#cbd5e1">• Identical 25-Hour CSMU</text>
+    <text x="20" y="135" font-family="monospace" font-size="12" fill="#cbd5e1">• Underwater Beacon (ULB)</text>
+    <text x="35" y="155" font-family="monospace" font-size="11" fill="#94a3b8">- 37.5 kHz Acoustic Pinger</text>
+    <text x="35" y="175" font-family="monospace" font-size="11" fill="#94a3b8">- 90-Day Battery TSO-C121b</text>
+    <text x="20" y="205" font-family="monospace" font-size="12" fill="#cbd5e1">• Automatic Deployable ELT</text>
+    <text x="20" y="235" font-family="monospace" font-size="12" fill="#cbd5e1">• 20,000 ft Water Submersion</text>
+    <text x="20" y="265" font-family="monospace" font-size="12" fill="#cbd5e1">• 3400g / 6.5ms Impact Shock</text>
+    <text x="20" y="295" font-family="monospace" font-size="12" fill="#cbd5e1">• 1100°C Fire Resistance</text>
+    <rect x="20" y="325" width="210" height="30" rx="4" fill="#431407" stroke="#ea580c"/>
+    <text x="125" y="345" text-anchor="middle" font-family="monospace" font-size="11" fill="#fdba74">CRASH EVIDENCE PRESERVED</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="290" y1="295" x2="350" y2="295" stroke="#ea580c" stroke-width="2"/>
+  <line x1="610" y1="295" x2="670" y2="295" stroke="#10b981" stroke-width="2"/>
+</svg>
